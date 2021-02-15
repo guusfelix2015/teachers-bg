@@ -1,0 +1,50 @@
+<div class="item">
+  <div>Avatar URL</div>
+  <div>
+    <input type="url" name="avatar_url" placeholder="http://" value="{{ teacher.avatar_url }}" />
+  </div>
+</div>
+<div class="item">
+  <div>Professor</div>
+  <div>
+    <input type="text" name="name" placeholder="Nome do Professor" value="{{ teacher.name }}" />
+  </div>
+</div>
+<div class="item">
+  <div>Data de Nascimento</div>
+  <div>
+    <input type="date" name="birth" value="{{ teacher.birth }}" />
+  </div>
+</div>
+<div class="item">
+  <div>Grau de Escolaridade</div>
+  <div>
+    <select name="graduation">
+      <option>{{ teacher.graduation }}</option>
+      <option value="Ensino Médio Completo">Ensino Médio Completo</option>
+      <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+      <option value="Mestrado">Mestrado</option>
+      <option value="Doutorado">Doutorado</option>
+    </select>
+  </div>
+</div>
+<div class="item">
+  <div>Tipo de Aula</div>
+  <div>
+    <span
+      ><input type="radio" name="typeclass" value="P" {% if teacher.typeclass == "P" %} checked {% endif
+      %}/>Presencial</span
+    >
+    <span
+      ><input type="radio" name="typeclass" value="A" {% if teacher.typeclass == "A" %} checked {% endif %} />À
+      distância</span
+    >
+  </div>
+</div>
+<div class="item">
+  <div>Área de atuação</div>
+  <div>
+    <input type="text" name="services" placeholder="Separe o tipo de aula por virgula" value="{{ teacher.services }}" />
+  </div>
+</div>
+<button type="submit">Salvar</button>
