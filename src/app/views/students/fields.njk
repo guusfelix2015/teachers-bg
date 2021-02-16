@@ -1,26 +1,26 @@
 <div class="item">
   <div>Avatar URL</div>
   <div>
-    <input type="url" name="avatar_url" placeholder="http://" value="{{ student.avatar_url }}" />
+    <input type="url" name="avatar_url" placeholder="http://" value="{{ student.avatar_url }}"/>
   </div>
 </div>
 <div class="item">
   <div>Nome</div>
   <div>
-    <input type="text" name="name" placeholder="Nome do Aluno" value="{{ student.name }}" />
+    <input type="text" name="name" placeholder="Nome do Aluno" value="{{ student.name }}"/>
   </div>
 </div>
 <div class="item">
   <div>Email</div>
   <div>
-    <input type="email" name="email" value="{{ student.email }}" />
+    <input type="email" name="email" value="{{ student.email }}"/>
   </div>
 </div>
 
 <div class="item">
   <div>Data de nascimento</div>
   <div>
-    <input type="date" name="birth" value="{{ student.birth }}" />
+    <input type="date" name="birth" value="{{ student.birth }}"/>
   </div>
 </div>
 
@@ -28,7 +28,7 @@
   <div>Ano Escolar</div>
   <div>
     <select name="graduation">
-      <option>{{ student.graduation }}</option>
+      <option value="{{student.graduation}}">{{ student.graduation }}</option>
       <option value="Quinto ano fundamental">Quinto ano fundamental</option>
       <option value="Sexto ano fundamental">Sexto ano fundamental</option>
       <option value="Setimo ano fundamental">Setimo ano fundamental</option>
@@ -43,7 +43,7 @@
 <div class="item">
   <div>Carga horária</div>
   <div>
-    <input type="number" name="carga" placeholder="Numero de horas" value="{{ student.carga }}" />
+    <input type="number" name="carga" placeholder="Numero de horas" value="{{ student.carga }}"/>
   </div>
 </div>
 <div class="item">
@@ -54,7 +54,7 @@
       %}/>Presencial</span
     >
     <span
-      ><input type="radio" name="typeclass" value="A" {% if student.typeclass == "A" %} checked {% endif %} />À
+      ><input type="radio" name="typeclass" value="A" {% if student.typeclass == "A" %} checked {% endif %}/>À
       distância</span
     >
   </div>

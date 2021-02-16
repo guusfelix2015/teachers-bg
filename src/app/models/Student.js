@@ -42,4 +42,39 @@ module.exports = {
       callback(results.rows[0]);
     });
   },
+
+  update(data, callback) {
+    const query = `UPDATE students SET 
+    avatar_url=($1),
+    name=($2),
+    birth=($3),
+    email=($4),
+    graduation=($5),
+    carga=($6),
+    typeclass=($7)
+    WHERE id = $8
+    `;
+    const values = [
+      data.avatar_url,
+      data.name,
+      date(data.birth).iso,
+      data.email,
+      data.graduation,
+      data.carga,
+      data.typeclass,
+      data.id,
+    ];
+
+    db.query(query, values, (err, results) => {
+      if (err) throw `Database error ${err}`;
+      callback();
+    });
+  },
+
+  delete(id, callback) {
+    db.query(`DELETE FROM students WHERE id = $1`, [id], (err, results) => {
+      if (err) throw `Database Error ${err}`;
+      callback();
+    });
+  },
 };
