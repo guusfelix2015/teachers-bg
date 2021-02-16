@@ -1,8 +1,11 @@
+const Student = require("../models/Student");
 const { age, date } = require("../../lib/utils");
 
 module.exports = {
   index(req, res) {
-    return res.render("students/index");
+    Student.all((students) => {
+      return res.render("students/index", { students });
+    });
   },
 
   create(req, res) {
@@ -16,7 +19,9 @@ module.exports = {
         return res.send("please, fill all fiels");
       }
     }
-    return;
+    Student.create(req.body, (student) => {
+      return res.redirect(`students/${student.id}`);
+    });
   },
 
   show(req, res) {
