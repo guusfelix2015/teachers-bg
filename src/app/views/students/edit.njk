@@ -4,7 +4,7 @@
   <section
     class="avatar"
     style="
-      background: url({{ student.avatar_url }})
+      background: url({{ member.avatar_url }})
         no-repeat center center / cover;
     "
   ></section>
@@ -14,14 +14,14 @@
 
       {% include 'students/fields.njk' %}
 
-      <input type="hidden" name="id" value="{{ student.id }}" />
+      <input type="hidden" name="id" value="{{ member.id }}" />
     </form>
 
     <form id="form-delete" action="/students?_method=DELETE" method="post">
-      <input type="hidden" name="id" value="{{ student.id }}" />
+      <input type="hidden" name="id" value="{{ member.id }}" />
       <button type="submit">Deletar</button>
     </form>
-
+    
     <script>
       const formDelete = document.querySelector("#form-delete");
       formDelete.addEventListener("submit", (event) => {
@@ -32,6 +32,7 @@
       });
     </script>
 
+    
   </section>
 </div>
 

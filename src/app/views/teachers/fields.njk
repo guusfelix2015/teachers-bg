@@ -4,18 +4,21 @@
     <input type="url" name="avatar_url" placeholder="http://" value="{{ teacher.avatar_url }}"/>
   </div>
 </div>
+
 <div class="item">
   <div>Professor</div>
   <div>
     <input type="text" name="name" placeholder="Nome do Professor" value="{{ teacher.name }}"/>
   </div>
 </div>
+
 <div class="item">
   <div>Data de Nascimento</div>
   <div>
     <input type="date" name="birth" value="{{ teacher.birth }}"/>
   </div>
 </div>
+
 <div class="item">
   <div>Grau de Escolaridade</div>
   <div>
@@ -28,6 +31,7 @@
     </select>
   </div>
 </div>
+
 <div class="item">
   <div>Tipo de Aula</div>
   <div>
@@ -41,10 +45,12 @@
     >
   </div>
 </div>
+
 <div class="item">
   <div>Área de atuação</div>
   <div>
     <input type="text" name="services" placeholder="Separe o tipo de aula por virgula" value="{{ teacher.services }}"/>
   </div>
 </div>
+
 <button type="submit">Salvar</button>

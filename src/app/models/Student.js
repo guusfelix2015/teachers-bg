@@ -17,8 +17,9 @@ module.exports = {
       graduation,
       carga,
       typeclass,
-      birth
-    ) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING id`;
+      birth,
+      teacher_id
+    ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING id`;
 
     const values = [
       data.name,
@@ -28,6 +29,7 @@ module.exports = {
       data.carga,
       data.typeclass,
       date(data.birth).iso,
+      data.teacher,
     ];
 
     db.query(query, values, (err, results) => {
@@ -37,10 +39,17 @@ module.exports = {
   },
 
   find(id, callback) {
-    db.query(`SELECT * FROM students WHERE id = $1`, [id], (err, results) => {
-      if (err) throw `Database Error ${err}`;
-      callback(results.rows[0]);
-    });
+    db.query(
+      `SELECT students.*, teachers.name AS teacher_name
+       FROM students
+       LEFT JOIN teachers ON (students.teacher_id = teachers.id)
+       WHERE students.id = $1`,
+      [id],
+      (err, results) => {
+        if (err) throw `Database Error ${err}`;
+        callback(results.rows[0]);
+      }
+    );
   },
 
   update(data, callback) {
@@ -51,8 +60,9 @@ module.exports = {
     email=($4),
     graduation=($5),
     carga=($6),
-    typeclass=($7)
-    WHERE id = $8
+    typeclass=($7),
+    teacher_id=($8)
+    WHERE id = $9
     `;
     const values = [
       data.avatar_url,
@@ -62,6 +72,7 @@ module.exports = {
       data.graduation,
       data.carga,
       data.typeclass,
+      data.teacher,
       data.id,
     ];
 
@@ -74,7 +85,14 @@ module.exports = {
   delete(id, callback) {
     db.query(`DELETE FROM students WHERE id = $1`, [id], (err, results) => {
       if (err) throw `Database Error ${err}`;
-      callback();
+      return callback();
+    });
+  },
+
+  teachersSelectOption(callback) {
+    db.query(`SELECT name, id FROM teachers`, (err, results) => {
+      if (err) throw `Database Error ${err}`;
+      callback(results.rows);
     });
   },
 };

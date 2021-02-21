@@ -9,7 +9,9 @@ module.exports = {
   },
 
   create(req, res) {
-    return res.render("students/create");
+    Student.teachersSelectOption((option) => {
+      return res.render("students/create", { teachersSelectOption: option });
+    });
   },
 
   post(req, res) {
@@ -26,7 +28,7 @@ module.exports = {
 
   show(req, res) {
     Student.find(req.params.id, (student) => {
-      if (!student) return res.semd("Student not found");
+      if (!student) return res.send("Student not found");
       student.birth = date(student.birth).birthDay;
       return res.render("students/show", { student });
     });
@@ -38,7 +40,12 @@ module.exports = {
 
       student.birth = date(student.birth).iso;
 
-      return res.render("students/edit", { student });
+      Student.teachersSelectOption((option) => {
+        return res.render("students/edit", {
+          student,
+          teachersSelectOption: option,
+        });
+      });
     });
   },
 

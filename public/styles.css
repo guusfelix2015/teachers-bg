@@ -157,7 +157,7 @@ input::placeholder {
 button[type="submit"],
 a.button {
   padding: 16px 32px;
-  background-color: #67159c;
+  background-color: var(--primary-color);
   border-radius: 4px;
   margin-top: 32px;
   width: 100%;
@@ -244,4 +244,35 @@ tbody tr td:last-child a,
 .table-container thead tr th:last-child,
 td:last-child {
   text-align: center;
+}
+
+/* Filters */
+
+.table-container .header-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.table-container .header-card a {
+  margin: 0;
+  width: 120px;
+}
+
+.table-container .header-card form {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-container .header-card form button {
+  margin: 0;
+}
+
+.table-container .header-card form input {
+  border: 1px solid #eee;
+  padding: 12px 8px;
+  box-sizing: border-box;
 }
