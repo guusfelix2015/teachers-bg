@@ -9,8 +9,8 @@ module.exports = {
   },
 
   create(req, res) {
-    Student.teachersSelectOption((option) => {
-      return res.render("students/create", { teachersSelectOption: option });
+    Student.teachersSelectOption((options) => {
+      return res.render("students/create", { teachersSelectOption: options });
     });
   },
 
@@ -40,10 +40,10 @@ module.exports = {
 
       student.birth = date(student.birth).iso;
 
-      Student.teachersSelectOption((option) => {
+      Student.teachersSelectOption((options) => {
         return res.render("students/edit", {
           student,
-          teachersSelectOption: option,
+          teachersSelectOption: options,
         });
       });
     });

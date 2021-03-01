@@ -88,7 +88,7 @@ module.exports = {
     ];
     db.query(query, values, (err, results) => {
       if (err) throw `Database error ${err}`;
-      callback();
+      return callback();
     });
   },
 

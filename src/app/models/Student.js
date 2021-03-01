@@ -19,7 +19,7 @@ module.exports = {
       typeclass,
       birth,
       teacher_id
-    ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING id`;
+    ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id`;
 
     const values = [
       data.name,
@@ -90,7 +90,7 @@ module.exports = {
   },
 
   teachersSelectOption(callback) {
-    db.query(`SELECT name, id FROM teachers`, (err, results) => {
+    db.query(`SELECT name,id FROM teachers`, (err, results) => {
       if (err) throw `Database Error ${err}`;
       callback(results.rows);
     });
