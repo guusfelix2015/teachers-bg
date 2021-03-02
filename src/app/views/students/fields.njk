@@ -29,8 +29,8 @@
 <div class="item">
   <div>Ano Escolar</div>
   <div>
-    <select name="graduation">
-      <option value ="{{teacher.graduation}}">{{ teacher.graduation }}</option>
+    <select name="graduation" value="{{teacher.graduation}}">
+    
       <option value="Ensino Médio Completo">Ensino Médio Completo</option>
       <option value="Ensino Superior Completo">Ensino Superior Completo</option>
       <option value="Mestrado">Mestrado</option>
@@ -63,8 +63,8 @@
 <div class="item">
   <div>Professor</div>
   <select name="teacher">
-    {% for teacher in teacherOptions%}
-      <option value="{{teacher.id}}" { if student.teacher_id == teacher.id } selected {endif}>
+    {% for teacher in teachersSelectOption%}
+      <option value="{{teacher.id}}" {%if student.teacher_id == teacher.id %} selected {%endif%}>
         {{teacher.name}}
       </option>
       {% endfor%}
