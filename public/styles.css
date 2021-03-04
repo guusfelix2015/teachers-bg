@@ -165,6 +165,7 @@ a.button {
   font-size: 16px;
   cursor: pointer;
   border: none;
+  outline: none;
 }
 
 a.button {
@@ -275,4 +276,64 @@ td:last-child {
   border: 1px solid #eee;
   padding: 12px 8px;
   box-sizing: border-box;
+}
+
+/* Filters */
+
+.table-container .header-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.table-container .header-card a {
+  margin: 0;
+  width: 120px;
+}
+
+.table-container .header-card form {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-container .header-card form button {
+  margin: 0;
+}
+
+.table-container .header-card form input {
+  border: 1px solid #eee;
+  padding: 12px 8px;
+  box-sizing: border-box;
+}
+
+/* pagination */
+.table-container {
+  display: grid;
+  grid-template: 64px 1fr 16px / 1fr;
+}
+
+.table-container .header-card {
+  margin: 0;
+  align-self: start;
+}
+
+.table-container .pagination {
+  margin: 0;
+  align-self: end;
+  justify-self: center;
+}
+
+.pagination a,
+.pagination span {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.pagination a:hover {
+  filter: brightness(0.3);
+  border-bottom: 1px solid var(--primary-color);
 }
