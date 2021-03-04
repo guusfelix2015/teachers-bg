@@ -5,7 +5,11 @@
     <div class="header-card">
       <a class="button" href="/students/create">Novo</a>
       <form action="/students" method="GET">
-        <input type="text" name="filter" placeholder="Nome ou atendimento" value="{{filter}}">
+        <input
+        type="text"
+        name="filter"
+        placeholder="Nome ou atendimento"
+        value="{{ filter }}"/>
         <button type="submit">Filtrar</button>
       </form>
     </div>
@@ -34,5 +38,11 @@
         {% endfor %}
       </tbody>
     </table>
+    <div
+    class="pagination"
+    data-page="{{ pagination.page }}"
+    data-total="{{ pagination.total }}"
+    data-filter="{{ filter }}"
+  ></div>
   </div>
 {% endblock content %}
