@@ -19,7 +19,7 @@ npm install
 [![Image from Gyazo](https://i.gyazo.com/6bbb1a1706db8133471c13e2fbe4ca23.gif)](https://gyazo.com/6bbb1a1706db8133471c13e2fbe4ca23)
 
 - <h3> Funcionalidade de edição e deletar </h3>
-[![Image from Gyazo](https://i.gyazo.com/2783731fd5fe31f6e60047da1eeb8fbc.gif)](https://gyazo.com/2783731fd5fe31f6e60047da1eeb8fbc)3
+[![Image from Gyazo](https://i.gyazo.com/2783731fd5fe31f6e60047da1eeb8fbc.gif)](https://gyazo.com/2783731fd5fe31f6e60047da1eeb8fbc)
 - <h3> Relacinamento de alunos com o professor </h3>
 [![Image from Gyazo](https://i.gyazo.com/9e20192d36ed98a8c99b9c93a8f3e774.png)](https://gyazo.com/9e20192d36ed98a8c99b9c93a8f3e774)
 
