@@ -36,6 +36,10 @@
           <div>Desde</div>
           <div>{{ teacher.created_at }}</div>
         </div>
+        <div class="item">
+          <div>Professor de</div>
+          <div>{{ teacher.student_name }}</div>
+        </div>
         <a href="/teachers/{{teacher.id}}/edit" class="button">Editar</a>
       </section>
     </div>
